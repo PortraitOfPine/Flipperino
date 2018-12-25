@@ -13,6 +13,7 @@ public class ScoreCalculator : MonoBehaviour
     [SerializeField]
     private GameObject cube_;
     private float multiplier_;
+    private float lastDistance_;
     #endregion
 
     // Use this for initialization
@@ -26,6 +27,9 @@ public class ScoreCalculator : MonoBehaviour
     {
         float distance = this.cube_.transform.position.x;
         this.textScore_.text = Mathf.Ceil(distance * this.multiplier_).ToString();
-        this.multiplier_ += 0.01f;
+        if (this.lastDistance_ < distance - 1)
+        {
+            this.multiplier_ += 0.01f;
+        }
     }
 } 
