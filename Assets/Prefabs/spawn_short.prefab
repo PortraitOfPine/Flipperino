@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212199763726620546}
   - component: {fileID: 61592946138197586}
   m_Layer: 0
-  m_Name: floor_
+  m_Name: spawn_short
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -36,7 +36,7 @@ Transform:
   m_GameObject: {fileID: 1535562902173596}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 15, y: 0.75, z: 3.5259}
+  m_LocalScale: {x: 5, y: 0.75, z: 3.5259}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -102,7 +102,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 950d959efde980d43b0e408e43d68b8f, type: 3}
-  m_Color: {r: 0.056737285, g: 0.7075472, b: 0.40160987, a: 1}
+  m_Color: {r: 1, g: 0.39418817, b: 0.05490194, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

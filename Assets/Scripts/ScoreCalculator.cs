@@ -31,5 +31,7 @@ public class ScoreCalculator : MonoBehaviour
         {
             this.multiplier_ += 0.01f;
         }
+
+        this.lastDistance_ = distance;
     }
 } 
