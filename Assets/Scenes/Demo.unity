@@ -229,6 +229,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textScore_: {fileID: 1491600683}
+  cube_: {fileID: 1511365241}
 --- !u!224 &328690563
 RectTransform:
   m_ObjectHideFlags: 0

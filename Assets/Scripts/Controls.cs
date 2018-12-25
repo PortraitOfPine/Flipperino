@@ -15,6 +15,7 @@ public class Controls : MonoBehaviour
     void Start()
     {
         rigidbody_ = this.GetComponent<Rigidbody2D>();
+        // FIXME: If there is a colision, the cube could go backward
         rigidbody_.velocity = new Vector2(this.speed_, 0.0f);
     }
 
