@@ -1,7 +1,7 @@
 ---
 name: Feature Request
 about: Feature for Flipperino
-
+labels: enhancement
 ---
 
 **Description:**  
