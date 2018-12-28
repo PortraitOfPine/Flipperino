@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class Controls : MonoBehaviour
 {
-
     #region fields
-    private Rigidbody2D rigidbody_;
     [SerializeField]
     private float speed_;
+    [SerializeField]
+    private bool canOnlyFlipOnPlatform_;
+    private Rigidbody2D rigidbody_;
     private bool isFlipped_;
+    private bool onGround_;
     #endregion
 
     // Use this for initialization
@@ -33,7 +35,8 @@ public class Controls : MonoBehaviour
         if (this.isFlipped_)
         {
             this.rigidbody_.velocity = new Vector2(3, 3);
-        } else
+        }
+        else
         {
             this.rigidbody_.velocity = new Vector2(3, -3);
         }
@@ -43,6 +46,24 @@ public class Controls : MonoBehaviour
     void Flip()
     {
         // Flip the gravity
-        this.isFlipped_ = !this.isFlipped_;
+        // XXX: Not the most readable loop
+        if (!this.canOnlyFlipOnPlatform_)
+        {
+            this.isFlipped_ = !this.isFlipped_;
+        } else if (this.onGround_)
+        {
+            this.isFlipped_ = !this.isFlipped_;
+        }
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        this.onGround_ = true;
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        this.onGround_ = false;
+    }
+
 }
