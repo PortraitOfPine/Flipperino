@@ -58,6 +58,8 @@ public class Controls : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        // XXX: If we add new items, we'll have to make sure the collision was
+        //      with a platform
         this.onGround_ = true;
     }
 
