@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class MapGenerator : MonoBehaviour
 {
     #region fields
@@ -43,5 +44,11 @@ public class MapGenerator : MonoBehaviour
 
             this.timer_ = 0.0f;
         }
+    }
+
+    void CreatePlatform(Vector3 position)
+    {
+
+
     }
 }
