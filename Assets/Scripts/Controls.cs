@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class Controls : MonoBehaviour
@@ -17,10 +18,7 @@ public class Controls : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        rigidbody_ = this.GetComponent<Rigidbody2D>();
-        // FIXME: If there is a colision, the cube could go backward
-        this.isFlipped_ = false;
-        this.rigidbody_.gravityScale = 0;
+        this.InitState();
     }
 
     // Update is called once per frame
@@ -50,7 +48,8 @@ public class Controls : MonoBehaviour
         if (!this.canOnlyFlipOnPlatform_)
         {
             this.isFlipped_ = !this.isFlipped_;
-        } else if (this.onGround_)
+        }
+        else if (this.onGround_)
         {
             this.isFlipped_ = !this.isFlipped_;
         }
@@ -68,4 +67,17 @@ public class Controls : MonoBehaviour
         this.onGround_ = false;
     }
 
+    private void OnBecameInvisible()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        this.InitState();
+    }
+
+    private void InitState()
+    {
+        this.rigidbody_ = this.GetComponent<Rigidbody2D>();
+        // FIXME: If there is a colision, the cube could go backward
+        this.isFlipped_ = false;
+        this.rigidbody_.gravityScale = 0;
+    }
 }
